@@ -1,4 +1,4 @@
 module.exports = ({ env }) => ({
-  host: "${process.env.HOST}",
-  port: "${process.env.PORT || 1337}"
+  host: "https://strapi-dev.azurewebsites.net",
+  port: "1337"
 });
