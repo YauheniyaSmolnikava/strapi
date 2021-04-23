@@ -4,6 +4,7 @@ ENV PORT 1337
 ENV HOST 0.0.0.0
 ENV NODE_ENV production
 EXPOSE 1337
+EXPOSE 80
 
 # create app dir
 RUN mkdir -p /user/src/app
@@ -17,5 +18,6 @@ COPY . /usr/src/app
 
 RUN yarn build
 EXPOSE 1337
+EXPOSE 80
 
 CMD ["yarn", "start"]
