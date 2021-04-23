@@ -8,7 +8,6 @@ ENV NODE_ENV production
 RUN mkdir -p /user/src/app
 WORKDIR /usr/src/app
 EXPOSE 1337
-EXPOSE 80
 
 COPY package*.json /usr/src/app
 COPY yarn.lock /usr/src/app
@@ -18,6 +17,5 @@ COPY . /usr/src/app
 
 RUN yarn build
 EXPOSE 1337
-EXPOSE 80
 
 CMD ["yarn", "start"]
