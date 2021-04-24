@@ -1,6 +1,6 @@
 FROM node:12-alpine
 
-ENV PORT 80
+ENV PORT 1337
 ENV HOST 0.0.0.0
 ENV NODE_ENV production
 
@@ -15,6 +15,6 @@ RUN yarn install
 COPY . /usr/src/app
 
 RUN yarn build
-EXPOSE 80
+EXPOSE 1337
 
 CMD ["yarn", "start"]
