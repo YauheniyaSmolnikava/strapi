@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: strapi:${{ github.sha }}
+        tags: strapi:254
         file: ./Dockerfile
 
   deploy:
