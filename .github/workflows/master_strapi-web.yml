@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: ${{ secrets.AzureAppService_ContainerUsername_c80ad5817b794532a36b873f222a9088 }}/strapi:${{ github.sha }}
+        tags: strapi:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
