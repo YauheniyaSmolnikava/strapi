@@ -1,4 +1,4 @@
 module.exports = ({ env }) => ({
-  host: "localhost",
-  port: "1337"
+  host: "${process.env.HOST}",
+  port: "$(process.env.PORT || 1337)"
 });

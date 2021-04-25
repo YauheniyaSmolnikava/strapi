@@ -16,6 +16,5 @@ COPY . /usr/src/app
 
 RUN yarn build
 EXPOSE 1337
-EXPOSE 80
 
 CMD ["yarn", "start"]
