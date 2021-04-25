@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v1
       with:
         registry: https://strapitestcontainer.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_613b9ce0dadb4393925476957616aad0 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_74cb5ebd1918400f8618fc8a5720c297 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_c80ad5817b794532a36b873f222a9088 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_24584ac791604c7988a0187c0b1fee18 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: ${{ secrets.AzureAppService_ContainerUsername_613b9ce0dadb4393925476957616aad0 }}/strapi:${{ github.sha }}
+        tags: ${{ secrets.AzureAppService_ContainerUsername_c80ad5817b794532a36b873f222a9088 }}/strapi:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'strapi-web'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_9bc0d5f4ade540c1a8747d7d00e6b771 }}
-        images: 'strapitestcontainer.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_613b9ce0dadb4393925476957616aad0 }}/strapi:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_8de0dae15b62491a8fcf1792ac274f7f }}
+        images: 'strapitestcontainer.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_c80ad5817b794532a36b873f222a9088 }}/strapi:${{ github.sha }}'
